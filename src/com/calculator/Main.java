@@ -12,11 +12,24 @@ public class Main {
         // Annual Interest Rate: 3.92
         // Period (Years): 30
         // Mortgage: $472.81
-        System.out.print("Principal: ");
-        long principal = scanner.nextLong();
-        System.out.print("\nAnnual Interest Rate: ");
-        double air = scanner.nextDouble();
-        System.out.print("\nPeriod (Years): ");
+
+        long principal = 0;
+        do {
+            System.out.print("Principal (1K - 1M): ");
+            principal = scanner.nextLong();
+        } while (principal < 1000 || principal > 100000);
+
+        double air = 0;
+        while(true) {
+            System.out.print("\nAnnual Interest Rate (0 - 30): ");
+            air = scanner.nextDouble();
+            if (air >= 1 && air <= 30) {
+                break;
+            }
+            System.out.println("Annual interest rate should be between 1 - 30");
+        }
+
+        System.out.print("\nPeriod (Years) (1 - 30): ");
         int periodYears = scanner.nextInt();
 
         double mir = air / (double) (12 * 100);
