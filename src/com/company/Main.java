@@ -217,6 +217,9 @@ public class Main {
 
         ControlFlow cf = new ControlFlow();
         cf.run();
+
+        Loops lp = new Loops();
+        lp.run();
         }
 
 
